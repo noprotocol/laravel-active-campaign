@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace JobVerplanke\LaravelActiveCampaign\Mapping\Contact;
 
-use JobVerplanke\LaravelActiveCampaign\Contracts\Mapper;
-use JobVerplanke\LaravelActiveCampaign\Traits\HasFields;
 use Illuminate\Support\Enumerable;
+use JobVerplanke\LaravelActiveCampaign\Contracts\Mapper;
+use JobVerplanke\LaravelActiveCampaign\Contracts\Status;
 
 /**
  * @template TKey of int|string
@@ -14,22 +14,22 @@ use Illuminate\Support\Enumerable;
  *
  * @implements \JobVerplanke\LaravelActiveCampaign\Contracts\Mapper<TKey, TValue>
  */
-class MapCreateContact implements Mapper
+class MapSubscribeContactToList implements Mapper
 {
-    use HasFields;
-
     /**
      * @template TKeyMap of array-key
      * @template TValueMap
      *
      * @param \Illuminate\Support\Enumerable<TKeyMap, TValueMap> $data
      *
-     * @return array<string, TValueMap|null>
+     * @return array<string, TValueMap|int|null>
      */
     public function map(Enumerable $data): array
     {
         return [
-            'email' => $data->get(key: 'email'),
+            'list' => $data->get(key: 'list_id'),
+            'contact' => $data->get(key: 'contact_id'),
+            'status' => Status::SUBSCRIBE,
         ];
     }
 }

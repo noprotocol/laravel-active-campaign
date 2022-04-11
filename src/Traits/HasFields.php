@@ -11,6 +11,8 @@ trait HasFields
 {
     /**
      * @throws \Illuminate\Http\Client\RequestException
+     *
+     * @return \Illuminate\Support\Collection<int, mixed>
      */
     public function fields(): Collection
     {

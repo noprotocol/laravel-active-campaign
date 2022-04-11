@@ -8,8 +8,10 @@ use JobVerplanke\LaravelActiveCampaign\Get;
 use Illuminate\Support\Collection;
 
 /**
- * @template TKey of array-key
+ * @template TKey of int|string
  * @template TValue
+ *
+ * @extends \JobVerplanke\LaravelActiveCampaign\Get<TKey, TValue>
  */
 class GetFields extends Get
 {

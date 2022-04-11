@@ -13,12 +13,12 @@ use Illuminate\Support\Enumerable;
 interface Mapper
 {
     /**
-     * @template TKeyParam of array-key
-     * @template TValueParam
+     * @template TKeyMap of array-key
+     * @template TValueMap
      *
-     * @param \Illuminate\Support\Enumerable<TKeyParam, TValueParam> $data
+     * @param \Illuminate\Support\Enumerable<TKeyMap, TValueMap> $data
      *
-     * @return array<int|string, TValue>
+     * @return array<TKey, TValue>
      */
     public function map(Enumerable $data): array;
 }

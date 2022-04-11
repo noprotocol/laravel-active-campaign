@@ -9,11 +9,19 @@ use JobVerplanke\LaravelActiveCampaign\Exceptions\ActiveCampaignException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
 
+/**
+ * @template TKey of int|string
+ * @template TValue
+ */
 class ActiveCampaign
 {
     protected string $baseUrl;
-    protected Mapper $mapper;
     protected PendingRequest $client;
+
+    /**
+     * @var \JobVerplanke\LaravelActiveCampaign\Contracts\Mapper<TKey, TValue>
+     */
+    protected Mapper $mapper;
 
     public function __construct()
     {

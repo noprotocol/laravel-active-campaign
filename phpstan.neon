@@ -3,11 +3,7 @@ includes:
 
 parameters:
   paths:
-    - src
-  excludePaths:
-    analyse:
-      - src/Examples
+    - src/
 
   level: 9
   checkOctaneCompatibility: true
-  checkGenericClassInNonGenericObjectType: false

@@ -7,6 +7,12 @@ namespace JobVerplanke\LaravelActiveCampaign\Resources\Contact;
 use JobVerplanke\LaravelActiveCampaign\Get;
 use Illuminate\Http\Client\Response;
 
+/**
+ * @template TKey of int|string
+ * @template TValue
+ *
+ * @extends \JobVerplanke\LaravelActiveCampaign\Get<TKey, TValue>
+ */
 class GetContact extends Get
 {
     /**

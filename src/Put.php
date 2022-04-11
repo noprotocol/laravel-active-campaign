@@ -9,6 +9,13 @@ use JobVerplanke\LaravelActiveCampaign\Traits\Mappable;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\Response;
 
+/**
+ * @template TKey of int|string
+ * @template TValue
+ *
+ * @extends \JobVerplanke\LaravelActiveCampaign\ActiveCampaign<TKey, TValue>
+ * @implements MappableContract<TKey, TValue>
+ */
 abstract class Put extends ActiveCampaign implements MappableContract
 {
     use Mappable;

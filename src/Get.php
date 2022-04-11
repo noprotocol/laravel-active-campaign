@@ -7,6 +7,12 @@ namespace JobVerplanke\LaravelActiveCampaign;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\Response;
 
+/**
+ * @template TKey of int|string
+ * @template TValue
+ *
+ * @extends \JobVerplanke\LaravelActiveCampaign\ActiveCampaign<TKey, TValue>
+ */
 abstract class Get extends ActiveCampaign
 {
     /**
