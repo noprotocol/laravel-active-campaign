@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Resources\Contact;
+namespace JobVerplanke\LaravelActiveCampaign\Tests\Resources\Contact;
 
-use Tests\TestCase;
+use JobVerplanke\LaravelActiveCampaign\Tests\TestCase;
 
 class CreateContactTest extends TestCase
 {

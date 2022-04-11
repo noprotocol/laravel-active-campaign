@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace JobVerplanke\LaravelActiveCampaign\Tests;
 
 use JobVerplanke\LaravelActiveCampaign\ActiveCampaign;
 use JobVerplanke\LaravelActiveCampaign\Exceptions\ActiveCampaignException;

@@ -2,13 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace JobVerplanke\LaravelActiveCampaign\Tests;
 
 use JobVerplanke\LaravelActiveCampaign\ActiveCampaignServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
-class TestCase extends BaseTestCase
+abstract class TestCase extends BaseTestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+    }
+
     protected function getPackageProviders($app)
     {
         return [
