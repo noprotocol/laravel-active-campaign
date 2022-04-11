@@ -1,0 +1,13 @@
+includes:
+  - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+  paths:
+    - src
+  excludePaths:
+    analyse:
+      - src/Examples
+
+  level: 9
+  checkOctaneCompatibility: true
+  checkGenericClassInNonGenericObjectType: false

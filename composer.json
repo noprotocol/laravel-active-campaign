@@ -1,0 +1,52 @@
+{
+    "name": "jobverplanke/laravel-active-campaign",
+    "description": "API for ActiveCampaign",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Job Verplanke",
+            "email": "job.verplanke@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "illuminate/contracts": "^8.0|^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.3",
+        "nunomaduro/larastan": "^2.1",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "JobVerplanke\\LaravelActiveCampaign\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts" : {
+        "test:types": "./vendor/bin/phpstan analyse --ansi --memory-limit=-1",
+        "test:unit": "./vendor/bin/phpunit --configuration ./phpunit.xml",
+        "test:coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --configuration ./phpunit.xml --coverage-html build/coverage",
+        "test": [
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JobVerplanke\\LaravelActiveCampaign\\ActiveCampaignServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
