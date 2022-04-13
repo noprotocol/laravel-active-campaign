@@ -30,7 +30,7 @@ class UpdateContact extends Put
     {
         $data = $this->mapper->map(data: $data);
 
-        return $this->put(resource: 'accounts/' . $id, data: ['contact' => $data]);
+        return $this->put(resource: 'contacts/' . $id, data: ['contact' => $data]);
     }
 
     /**
