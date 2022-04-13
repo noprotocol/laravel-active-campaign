@@ -13,7 +13,7 @@ use Illuminate\Http\Client\Response;
  *
  * @extends \JobVerplanke\LaravelActiveCampaign\Get<TKey, TValue>
  */
-class SearchContacts extends Get
+class SearchContact extends Get
 {
     /**
      * @param array<int|string, int|string|null>|null $query
