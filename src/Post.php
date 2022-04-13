@@ -34,7 +34,7 @@ abstract class Post extends ActiveCampaign implements MappableContract
      */
     protected function post(string $resource, array $data): Response
     {
-        return $this->client->put(url: $resource, data: $data)
+        return $this->client->post(url: $resource, data: $data)
             ->throw(function (Response $response, RequestException $exception) {
                 report(exception: $exception);
             });
