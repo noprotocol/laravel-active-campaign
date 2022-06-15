@@ -5,21 +5,22 @@ declare(strict_types=1);
 namespace JobVerplanke\LaravelActiveCampaign\Examples;
 
 use Illuminate\Support\Facades\Route;
-use JobVerplanke\LaravelActiveCampaign\Contracts\Mapper;
+use JobVerplanke\LaravelActiveCampaign\Mapping\Contact\MapCreateContact;
 use Illuminate\Support\Enumerable;
 use JobVerplanke\LaravelActiveCampaign\Resources\Contact\CreateContact;
 
-class CustomMapCreateContact implements Mapper
+class ExampleExtendMap extends MapCreateContact
 {
     public function map(Enumerable $data): array
     {
-        return [
-            'foo' => 'bar'
-        ];
+        return array_merge(
+            parent::map(data: $data),
+            ['foo' => 'bar']
+        );
     }
 }
 
-Route::get('create-contact-custom-map', function () {
+Route::get('create-contact-extend-map', function () {
     $data = collect(value: [
         'email' => 'johndoe@example.com',
         'first_name' => 'John',
@@ -28,7 +29,7 @@ Route::get('create-contact-custom-map', function () {
 
     $createContact = new CreateContact();
     $response = $createContact
-        ->mapUsing(class: CustomMapCreateContact::class)
+        ->mapUsing(class: ExampleExtendMap::class)
         ->execute(data: $data);
 
     return $response->json();
