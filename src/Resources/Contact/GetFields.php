@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JobVerplanke\LaravelActiveCampaign\Resources\Fields;
+namespace JobVerplanke\LaravelActiveCampaign\Resources\Contact;
 
 use JobVerplanke\LaravelActiveCampaign\Get;
 use Illuminate\Support\Collection;
