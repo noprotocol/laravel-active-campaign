@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace JobVerplanke\LaravelActiveCampaign\Mapping\Contact;
 
 use JobVerplanke\LaravelActiveCampaign\Contracts\Mapper;
-use JobVerplanke\LaravelActiveCampaign\Traits\HasFields;
+use JobVerplanke\LaravelActiveCampaign\Traits\HasCustomFields;
 use Illuminate\Support\Enumerable;
 
 /**
@@ -16,7 +16,7 @@ use Illuminate\Support\Enumerable;
  */
 class MapCreateContact implements Mapper
 {
-    use HasFields;
+    use HasCustomFields;
 
     /**
      * @template TKeyMap of array-key
