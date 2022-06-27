@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JobVerplanke\LaravelActiveCampaign\Resources\Contact;
+namespace JobVerplanke\LaravelActiveCampaign\Resources\Deal;
 
 use JobVerplanke\LaravelActiveCampaign\Get;
 use Illuminate\Http\Client\Response;
