@@ -28,7 +28,9 @@ class SubscribeContactToList extends Post
      */
     public function execute(Enumerable $data): Response
     {
-        return $this->post(resource: 'contactLists', data: $this->mapper()->map(data: $data));
+        $data = $this->mapper->map(data: $data);
+
+        return $this->post(resource: 'contactLists', data: ['contactList' => $data]);
     }
 
     /**
